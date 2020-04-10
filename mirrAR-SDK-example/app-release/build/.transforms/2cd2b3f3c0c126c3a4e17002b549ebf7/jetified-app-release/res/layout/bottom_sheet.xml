@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottomSheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00221111"
+    app:behavior_peekHeight="68dp"
+    app:layout_behavior="com.sdm.mirrar.UserLockBottomSheetBehavior"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="1.0"
+    app:layout_constraintStart_toStartOf="parent"
+    android:paddingTop="35dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/changeLayout"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@mipmap/ic_down"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/mRecyclerView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/filter"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@mipmap/ic_filter"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/mRecyclerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:layout_marginTop="35dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/jewellery_item" />
+
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="64dp"
+            android:elevation="2dp"
+            android:gravity="center"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/mRecyclerView"
+            app:layout_constraintStart_toStartOf="@+id/mRecyclerView"
+            app:layout_constraintTop_toTopOf="@+id/mRecyclerView" />
+
+        <LinearLayout
+            android:id="@+id/emptyContainer"
+            android:layout_width="0dp"
+            android:layout_height="210dp"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="0dp">
+
+            <TextView
+                android:id="@+id/empty_textmsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:alpha="0.8"
+                android:text="Tap below to request more jewellery items from the brand!"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/btnRequest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bottom_nav_selector"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Send Request"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:layout_constraintEnd_toEndOf="@+id/filter"
+            app:layout_constraintStart_toStartOf="@+id/changeLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/mode_earring"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="Earrings"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/mRecyclerView"
+                    app:layout_constraintEnd_toStartOf="@+id/mode_necklace"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/changeLayout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/afterEarringsIV"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:visibility="gone"
+                    android:layout_gravity="center_vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/mRecyclerView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/circle" />
+
+                <TextView
+                    android:id="@+id/mode_necklace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="Necklaces"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/mRecyclerView"
+                    app:layout_constraintEnd_toStartOf="@+id/filter"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/mode_earring"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:id="@+id/afterNecklacesIV"
+                    android:visibility="gone"
+                    android:layout_gravity="center_vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/mRecyclerView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/circle" />
+
+                <TextView
+                    android:id="@+id/mode_w"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="Wishlist"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/mRecyclerView"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/mode_necklace"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mode_set"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="Sets"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/mRecyclerView"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/mode_necklace"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:id="@+id/afterSetsIV"
+                    android:visibility="gone"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/circle" />
+
+                <TextView
+                    android:id="@+id/mode_rings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="Rings"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/mRecyclerView"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/mode_set"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:id="@+id/afterRingIV"
+                    android:visibility="gone"
+                    android:layout_gravity="center_vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/mRecyclerView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/circle" />
+
+                <TextView
+                    android:id="@+id/mode_bracelets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:visibility="gone"
+                    android:text="Bracelets"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/mRecyclerView"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/mode_necklace"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/afterBracelet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

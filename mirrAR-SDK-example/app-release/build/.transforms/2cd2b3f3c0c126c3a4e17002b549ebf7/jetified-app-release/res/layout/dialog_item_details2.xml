@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center_vertical"
+        android:padding="16dp"
+        android:src="@drawable/ic_close"
+        android:tint="@color/black" />
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="275dp"
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="0dp"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/ncImageView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2" />
+
+
+        <ImageView
+            android:id="@+id/productImage2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:layout_height="match_parent"
+            android:scaleX="-1" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/linearLayout2"
+        android:layout_below="@id/linearLayout"
+        android:layout_marginTop="28dp"
+        tools:ignore="MissingConstraints">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/knowMore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@color/colorAccent"
+            android:text="Buy Now"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+</RelativeLayout>
