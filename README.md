@@ -34,67 +34,30 @@
          ```
 
     2. In your activity/fragment class, add the following 
-          ```String data =  
-           {
-                "data": {
-                  "Earrings": {
-                    "Gold_Set_KJ-51": {
-                      "data": {
-                        "collection": "Gold Set",
-                        "image_url": "https://s3.ap-south-1.amazonaws.com/mirrar/kashi/inventory/Earrings/KJ-51.png",
-                        "location": "Kashi Jewellers",
-                        "material_type": "Gold",
-                        "picker_value": "View Details",
-                        "total_price": " "
-                      },
-                      "height": 72.5,
-                      "inventory": [
-                        {
-                          "Color_Stone_Weight": "1.81gm",
-                          "Gold KT": "22KT",
-                          "Gross Weight": "22.05gm",
-                          "Net Weight": "20.24gm"
-                        }
-                      ],
-                      "size_multiplier": 1,
-                      "x_offset": -3,
-                      "y_offset": -14,
-                      "InventoryCount": -1,
-                      "total_price": " "
-                    }
-                  },
-                  "Necklaces": {
-                    "Kundan_KJ-123": {
-                      "data": {
-                        "collection": "Kundan",
-                        "image_url": "https://s3.ap-south-1.amazonaws.com/mirrar/kashi/inventory/Necklaces/KJ-123.png",
-                        "location": "Kashi Jewellers",
-                        "material_type": "Gold",
-                        "picker_value": "View Details",
-                        "total_price": " "
-                      },
-                      "height": 193.18182373046875,
-                      "inventory": [
-                        {
-                          "Color_Stone_Weight": "4.30gm",
-                          "Gold KT": "22KT",
-                          "Gross Weight": "73.15gm",
-                          "Net Weight": "68.85gm"
-                        }
-                      ],
-                      "size_multiplier": 1,
-                      "x_offset": 0,
-                      "y_offset": 0,
-                      "InventoryCount": -1,
-                      "total_price": " "
-                    }
-                  }
-                }
-              }
-       //fill data as prescribled
-       ```
+          ```options = {
+			productData: {
+			         category1: {
+					items: [sku1, sku2, sku3, ...],
+					type: "ear"
+        			},
+        			category2: {
+			             items: [sku1, sku2, sku3, ...],
+			             type: "neck"
+			         },
+			        category3: {
+			            items: [sku1, sku2, sku3, ...],
+			            type: "set"
+			        },
+			        category4: {
+			             items: [sku1, sku2, sku3, ...],
+			             type: "ear"
+				}
+        		.
+        		.
+        		.
+		}```
        
-		```
+	```
          MirrarFragment fragment = new MirrarFragment(username, password, data);
          getSupportFragmentManager()
                             .beginTransaction()
