@@ -55,10 +55,10 @@
         		.
         		.
         		.
-		}```
+		}
        
 	```
-         MirrarFragment fragment = new MirrarFragment(username, password, data);
+         MirrarFragment fragment = new MirrarFragment(username, password, options);
          getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.container, fragment)
