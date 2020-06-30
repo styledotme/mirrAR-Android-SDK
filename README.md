@@ -95,7 +95,7 @@
        ```
        
 		```
-         MirrarFragment fragment = new MirrarFragment(data);
+         MirrarFragment fragment = new MirrarFragment(username, password, data);
          getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.container, fragment)
