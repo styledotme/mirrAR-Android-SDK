@@ -40,7 +40,7 @@
 					items: [sku1, sku2, sku3, ...],
 					type: "ear"
         			},
-        			category2: {
+				category2: {
 			             items: [sku1, sku2, sku3, ...],
 			             type: "neck"
 			         },
@@ -63,8 +63,7 @@
                             .beginTransaction()
                             .replace(R.id.container, fragment)
                             .commit();
-        ```
 		   
-		  `R.id.container` is the container layout in which the viewer will be displayed.
+	`R.id.container` is the container layout in which the viewer will be displayed.
 		   
 		
