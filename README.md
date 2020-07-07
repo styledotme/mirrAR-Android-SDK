@@ -10,6 +10,12 @@
     `implementation "androidx.camera:camera-camera2:${camerax_version}"`
 
     `implementation 'com.github.bumptech.glide:glide:4.11.0'`
+    `api 'com.squareup.retrofit2:converter-gson:2.7.1'`
+    `implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'`
+    `implementation 'com.squareup.okhttp3:okhttp:4.4.0'`
+    `api 'com.squareup.okhttp3:logging-interceptor:4.4.0'`
+    `api 'com.squareup.retrofit2:converter-scalars:2.4.0'`
+    `implementation 'com.amplitude:android-sdk:2.23.2'`
 
 
 * Enable view binding by adding the following block in the gradle file
@@ -56,8 +62,16 @@
         		.
         		.
 		}
+		
+	Type value: 
+		ear - Earrings
+		neck - Necklaces
+		set - Necklace earrings pair
+		finger - Rings
+		wrist - Bracelets
        
 	```
+	
          MirrarFragment fragment = new MirrarFragment(username, password, options);
          getSupportFragmentManager()
                             .beginTransaction()
