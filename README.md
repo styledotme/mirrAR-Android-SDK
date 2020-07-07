@@ -63,13 +63,6 @@
         		.
 		}
 		
-	Type value: 
-		ear - Earrings
-		neck - Necklaces
-		set - Necklace earrings pair
-		finger - Rings
-		wrist - Bracelets
-       
 	```
 	
          MirrarFragment fragment = new MirrarFragment(username, password, options);
@@ -79,5 +72,12 @@
                             .commit();
 		   
 	`R.id.container` is the container layout in which the viewer will be displayed.
+	
+	Type value: 
+	  `ear - Earrings`
+	  `neck - Necklaces`
+	  `set - Necklace earrings pair`
+	  `finger - Rings`
+	  `wrist - Bracelets`       
 		   
 		
