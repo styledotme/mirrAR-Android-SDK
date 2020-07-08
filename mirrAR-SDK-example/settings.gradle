@@ -1,2 +1,3 @@
-rootProject.name='SDK test'
-include ':app', ':app-release'
+include ':app-release'
+include ':app'
+rootProject.name = "Sdk testSub 2"
