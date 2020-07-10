@@ -11,8 +11,6 @@
 * Step 4
 ``` AndroidManifest.xml -> Set android:allowBackup="false"```
 
-* Set 5
-
 * Add the following dependencies to the app level gradle file
     `implementation 'com.google.android.material:material:1.2.0-alpha01'`
     `implementation 'com.google.firebase:firebase-ml-vision:24.0.1'`
