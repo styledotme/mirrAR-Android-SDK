@@ -77,7 +77,7 @@
         
 # Note: enable camera permission before initializing the fragment
 
-        MirrarFragment fragment = new MirrarFragment("tanishqwebar"/*login ID*/, "w4y0EihepyIAA50U"/*password*/, data /*json object*/);
+        MirrarFragment fragment = new MirrarFragment(""/*login ID*/, ""/*password*/, data /*json object*/);
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.container, fragment)
