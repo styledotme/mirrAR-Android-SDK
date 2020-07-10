@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         MirrarFragment fragment = null;
         try {
-            fragment = new MirrarFragment(""/*login ID*/, ""/*password*/, new JSONObject(data) /*json object*/);
+            fragment = new MirrarFragment(""/*login ID*/, ""/*password*/, data /*json object*/);
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.container, fragment)
