@@ -58,8 +58,8 @@
          ```
 
     2. In your activity/fragment class, add the following 
-         ```
-	 JSONObject data = {
+        
+	 ``` JSONObject data = {
   			"productData": {
   				  "category1": {
   				    "items": [  "sku1", "sku2", "sku3"],
