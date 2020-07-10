@@ -25,7 +25,11 @@
             viewBinding {
             enabled = true
             }
-        ...
+        }
+	
+	compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
         }
 ```
 
@@ -40,32 +44,27 @@
          ```
 
     2. In your activity/fragment class, add the following 
-          ```options = {
-			productData: {
-			         category1: {
-					items: [sku1, sku2, sku3, ...],
-					type: "ear"
-        			},
-				category2: {
-			             items: [sku1, sku2, sku3, ...],
-			             type: "neck"
-			         },
-			        category3: {
-			            items: [sku1, sku2, sku3, ...],
-			            type: "set"
-			        },
-			        category4: {
-			             items: [sku1, sku2, sku3, ...],
-			             type: "ear"
-				}
-        		.
-        		.
-        		.
-		}
-		
-	```
+         JSONObject data = {
+  			"productData": {
+  				  "category1": {
+  				    "items": [  "sku1", "sku2", "sku3"],
+				    "type": "ear"
+				    }, 
+				  "category2": {
+				    "items": [ "sku1", "sku2", "sku3"],
+				    "type": "neck"
+				    },
+				  "category3": {
+				    "items": [ "sku1", "sku2", "sku3"],
+				    "type": "set"},
+				  "category4": {
+				    "items": ["sku1", "sku2", "sku3"],
+				    "type": "ear"
+				   }
+				  }
+				 }
 	
-         MirrarFragment fragment = new MirrarFragment(username, password, options);
+         MirrarFragment fragment = new MirrarFragment(username, password, data);
          getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.container, fragment)
