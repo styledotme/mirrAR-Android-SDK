@@ -17,35 +17,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        JSONObject data = {
-  			"productData": {
-  				  "category1": {
-  				    "items": [  "sku1", "sku2", "sku3"],
-				    "type": "ear"
-				    }, 
-				  "category2": {
-				    "items": [ "sku1", "sku2", "sku3"],
-				    "type": "neck"
-				    },
-				  "category3": {
-				    "items": [ "sku1", "sku2", "sku3"],
-				    "type": "set"},
-				  "category4": {
-				    "items": ["sku1", "sku2", "sku3"],
-				    "type": "ear"
-				   }
-				  }
-				 }
-
-        MirrarFragment fragment = null;
+        JSONObject data = null;
         try {
-            fragment = new MirrarFragment(""/*login ID*/, ""/*password*/, data /*json object*/);
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.container, fragment)
-                    .commit();
+            data = new JSONObject("{\"options\":{\"productData\":{\"category1\":{\"items\":[\"500005DMAABA04\",\"500005SFAABA02\",\"500005SFAABA09\"],\"type\":\"ear\"},\"category2\":{\"items\":[\"502118YEEAAA32\",\"502118YENAAA32\",\"502118YEOAAA32\"],\"type\":\"neck\"},\"category3\":{\"items\":[\"5027182ADABA02\",\"5027182AJABA02\",\"5027182AKABA02\"],\"type\":\"set\"},\"category4\":{\"items\":[\"502516NFEAAB32_N\",\"5027182ADABA02_N\",\"5027182AJABA02_N\"],\"type\":\"neck\"},\"category5\":{\"items\":[\"5031181DXAAA09\",\"5132181BUABA00\",\"5132181BWABA00\"],\"type\":\"set\"},\"category6\":{\"items\":[\"500005PFAAAA09\",\"500005PFAAAB22\",\"500006PEAAAA09\"],\"type\":\"neck\"}}}}");
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        MirrarFragment fragment = new MirrarFragment("tanishqwebar"/*login ID*/, "w4y0EihepyIAA50U"/*password*/, data /*json object*/);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.container, fragment)
+                .commit();
     }
 }
