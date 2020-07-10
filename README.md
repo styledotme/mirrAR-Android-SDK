@@ -5,9 +5,9 @@
 * Step 1 
 ``` File -> New -> New Module -> Import .jar/.aar and import your .aar.```
 * Step 2
-``` File -> Project structure -> Dependencies -> <All Modules> -> (Add jad dependencies by clicking on the '+' icon then select app-release)```
+``` File -> Project structure -> Dependencies -> <All Modules> -> (Add jar dependencies by clicking on the '+' icon then select app-release)```
 * Setp 3
-``` build.gradle(Module: app-release) -> remove the 'dependencies'```
+``` Go to build.gradle (Module: app-release) -> remove the 'dependencies'```
 * Step 4
 ``` AndroidManifest.xml -> Set android:allowBackup="false"```
 
