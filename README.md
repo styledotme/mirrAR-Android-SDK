@@ -1,6 +1,19 @@
 # Mirrar SDK
 
-* To enable sdk, add the following dependencies to the gradle file
+# How to import mirrAR android SDK
+
+* Step 1 
+``` File -> New -> New Module -> Import .jar/.aar and import your .aar.```
+* Step 2
+``` File -> Project structure -> Dependencies -> <All Modules> -> (Add jad dependencies by clicking on the '+' icon then select app-release)```
+* Setp 3
+``` build.gradle(Module: app-release) -> remove the 'dependencies'```
+* Step 4
+``` AndroidManifest.xml -> Set android:allowBackup="false"```
+
+* Set 5
+
+* Add the following dependencies to the app level gradle file
     `implementation 'com.google.android.material:material:1.2.0-alpha01'`
     `implementation 'com.google.firebase:firebase-ml-vision:24.0.1'`
     `implementation 'com.google.firebase:firebase-ml-vision-face-model:19.0.0'`
@@ -18,7 +31,7 @@
     `implementation 'com.amplitude:android-sdk:2.23.2'`
 
 
-* Enable view binding by adding the following block in the gradle file
+* Enable view binding and java 8 by adding the following block in the app level gradle file
 ```
     android{
         ...
@@ -31,6 +44,7 @@
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
         }
+       ...
 ```
 
 * To show the viewer, add the following:
@@ -44,7 +58,8 @@
          ```
 
     2. In your activity/fragment class, add the following 
-         ```JSONObject data = {
+         ```
+	 JSONObject data = {
   			"productData": {
   				  "category1": {
   				    "items": [  "sku1", "sku2", "sku3"],
@@ -65,6 +80,8 @@
 				 }
 	```
 	
+	# Note: enable camera permission before initializing the fragment
+	
          MirrarFragment fragment = new MirrarFragment(username, password, data);
          getSupportFragmentManager()
                             .beginTransaction()
@@ -79,5 +96,6 @@
 	  `set - Necklace earrings pair`
 	  `finger - Rings`
 	  `wrist - Bracelets`       
+	  
 		   
 		
