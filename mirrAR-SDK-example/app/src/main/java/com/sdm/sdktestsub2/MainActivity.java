@@ -17,44 +17,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String data = "{\n" +
-                "  \"options\": {\n" +
-                "    \"productData\": {\n" +
-                "      \"category1\": {\n" +
-                "        \"items\": [\n" +
-                "          \"CT-2077\",\n" +
-                "          \"CT-2032\",\n" +
-                "          \"CT-2144\"\n" +
-                "        ],\n" +
-                "        \"type\": \"ear\"\n" +
-                "      },\n" +
-                "      \"category2\": {\n" +
-                "        \"items\": [\n" +
-                "          \"sku1\",\n" +
-                "          \"CSh2057\",\n" +
-                "          \"CS-2102\"\n" +
-                "        ],\n" +
-                "        \"type\": \"neck\"\n" +
-                "      },\n" +
-                "      \"category3\": {\n" +
-                "        \"items\": [\n" +
-                "          \"sku1\",\n" +
-                "          \"DP-2369\",\n" +
-                "          \"DS-2179\"\n" +
-                "        ],\n" +
-                "        \"type\": \"set\"\n" +
-                "      },\n" +
-                "      \"category4\": {\n" +
-                "        \"items\": [\n" +
-                "          \"BR-07\",\n" +
-                "          \"BR-02\",\n" +
-                "          \"BR-01\"\n" +
-                "        ],\n" +
-                "        \"type\": \"wrist\"\n" +
-                "      }\n" +
-                "    }\n" +
-                "  }\n" +
-                "}";
+        JSONObject data = {
+  			"productData": {
+  				  "category1": {
+  				    "items": [  "sku1", "sku2", "sku3"],
+				    "type": "ear"
+				    }, 
+				  "category2": {
+				    "items": [ "sku1", "sku2", "sku3"],
+				    "type": "neck"
+				    },
+				  "category3": {
+				    "items": [ "sku1", "sku2", "sku3"],
+				    "type": "set"},
+				  "category4": {
+				    "items": ["sku1", "sku2", "sku3"],
+				    "type": "ear"
+				   }
+				  }
+				 }
 
         MirrarFragment fragment = null;
         try {
