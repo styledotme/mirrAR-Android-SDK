@@ -90,9 +90,7 @@
 	Type value: 
 	  `ear - Earrings`
 	  `neck - Necklaces`
-	  `set - Necklace earrings pair`
-	  `finger - Rings`
-	  `wrist - Bracelets`       
+	  `set - Necklace earrings pair`      
 	  
 		   
 		
