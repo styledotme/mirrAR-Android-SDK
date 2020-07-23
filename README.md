@@ -23,8 +23,6 @@
     `implementation "androidx.camera:camera-core:${camerax_version}"`
     
     `implementation "androidx.camera:camera-camera2:${camerax_version}"`
-
-    `implementation 'com.github.bumptech.glide:glide:4.11.0'`
     
     `api 'com.squareup.retrofit2:converter-gson:2.7.1'`
     
