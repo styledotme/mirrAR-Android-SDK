@@ -91,56 +91,60 @@
 	  `set - Necklace earrings pair`      
 	  
 		   
-# List of categories & types supported can be determined from this API -
-https://mirrar.styledotme.com/api/v1/brands/<brand_id>/categories
+# License validity along with active product codes & types supported can be determined from this API -
+curl --location --request POST 'https://mirrar.styledotme.com/api/v2/login' \
+--form 'username=/*login ID*/' \
+--form 'password=/*password*/' \
+--form 'type=android_sdk'
+
 ```
 {
-      "category": "Earrings",
-      "label": "Earrings",
-      "type": "ear",
-      "sequence": 1,
-      "active_product_count": 3529
-    },
-    {
-      "category": "Necklaces",
-      "label": "Necklaces",
-      "type": "neck",
-      "sequence": 2,
-      "active_product_count": 248
-    },
-    {
-      "category": "Pendants",
-      "label": "Pendants",
-      "type": "neck",
-      "sequence": 3,
-      "active_product_count": 1332
-    },
-    {
-      "category": "Sets",
-      "label": "Sets",
-      "type": "set",
-      "sequence": 3,
-      "active_product_count": 0
-    },
-    {
-      "category": "Mangalsutras",
-      "label": "Mangalsutras",
-      "type": "neck",
-      "sequence": 4,
-      "active_product_count": 70
-    },
-    {
-      "category": "PendantSets",
-      "label": "Pendant Sets",
-      "type": "set",
-      "sequence": 5,
-      "active_product_count": 13
-    },
-    {
-      "category": "NecklaceSets",
-      "label": "Necklace Sets",
-      "type": "set",
-      "sequence": 6,
-      "active_product_count": 154
-    }
+  "meta": {
+    "code": 200,
+    "message": "You have successfully logged in"
+  },
+  "data": {
+    "access_token": ###,
+    "uuid": ###,
+    "name": ###,
+    "webar_status": 0,
+    "admin_status": 1,
+    "warp_status": 0,
+    "instore_status": 1,
+    "android_sdk_bundle": "",
+    "ios_sdk_bundle": "",
+    "webar_sdk_domain": "",
+    "max_design_count": 10000,
+    "brand_type": "FINE",
+    "design_count": 200,
+    "logo_url": "https://mirrar.s3.ap-south-1.amazonaws.com/raghav/logo.png",
+    "bucket_name": ###,
+    "has_subsidiary": 0,
+    "instore_expires_at": "2100-01-01 00:00:00",
+    "webar_expires_at": "2100-01-01 00:00:00",
+    "warp_expires_at": "2100-01-01 00:00:00",
+    "active_product_codes": {
+      "Earrings": {
+        "items": [
+          1,
+          "112A",
+        ],
+        "type": "ear"
+      },
+      "Necklaces": {
+        "items": [
+          "2CD",
+          "XYZA"
+        ],
+        "type": "neck"
+      },
+      "Sets": {
+        "items": [
+          "TEST123"
+        ],
+        "type": "set"
+      }
+    }
+  }
+}
 ```
