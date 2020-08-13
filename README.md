@@ -91,4 +91,56 @@
 	  `set - Necklace earrings pair`      
 	  
 		   
-		
+# List of categories & types supported can be determined from this API -
+https://mirrar.styledotme.com/api/v1/brands/<brand_id>/categories
+```
+{
+      "category": "Earrings",
+      "label": "Earrings",
+      "type": "ear",
+      "sequence": 1,
+      "active_product_count": 3529
+    },
+    {
+      "category": "Necklaces",
+      "label": "Necklaces",
+      "type": "neck",
+      "sequence": 2,
+      "active_product_count": 248
+    },
+    {
+      "category": "Pendants",
+      "label": "Pendants",
+      "type": "neck",
+      "sequence": 3,
+      "active_product_count": 1332
+    },
+    {
+      "category": "Sets",
+      "label": "Sets",
+      "type": "set",
+      "sequence": 3,
+      "active_product_count": 0
+    },
+    {
+      "category": "Mangalsutras",
+      "label": "Mangalsutras",
+      "type": "neck",
+      "sequence": 4,
+      "active_product_count": 70
+    },
+    {
+      "category": "PendantSets",
+      "label": "Pendant Sets",
+      "type": "set",
+      "sequence": 5,
+      "active_product_count": 13
+    },
+    {
+      "category": "NecklaceSets",
+      "label": "Necklace Sets",
+      "type": "set",
+      "sequence": 6,
+      "active_product_count": 154
+    }
+```
