@@ -5,52 +5,59 @@
 * Step 1 
 ``` File -> New -> New Module -> Import .jar/.aar and import your .aar.```
 * Step 2
-``` File -> Project structure -> Dependencies -> <All Modules> -> (Add jar dependencies by clicking on the '+' icon then select app-release)```
-* Setp 3
-``` Go to build.gradle (Module: app-release) -> remove the 'dependencies'```
-* Step 4
-``` AndroidManifest.xml -> Set android:allowBackup="false"```
+In your project’s build.gradle (the one under ‘app’) add the following:
 
-* Add the following dependencies to the app level gradle file
-    ` implementation 'com.google.android.material:material:1.2.0-alpha01'`
-    
-    `implementation 'com.google.firebase:firebase-ml-vision:24.0.1'`
-    
-    `implementation 'com.google.firebase:firebase-ml-vision-face-model:19.0.0'`
+`dependencies {
+implementation project(':library-release')
+}`
 
-    `def camerax_version = "1.0.0-alpha05"`
-    
-    `implementation "androidx.camera:camera-core:${camerax_version}"`
-    
-    `implementation "androidx.camera:camera-camera2:${camerax_version}"`
-    
-    `api 'com.squareup.retrofit2:converter-gson:2.7.1'`
-    
-    `implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'`
-    
-    `implementation 'com.squareup.okhttp3:okhttp:4.4.0'`
-    
-    `api 'com.squareup.okhttp3:logging-interceptor:4.4.0'`
-    
-    `api 'com.squareup.retrofit2:converter-scalars:2.4.0'`
-    
-    `implementation 'com.amplitude:android-sdk:2.23.2'`
+	Clean Build after all the above steps.
 
+* Step 3  
+Android Studio adds Kotlin to your project classpath and applies the Kotlin and Kotlin Android Extensions plugins to each module that contains Kotlin files. Your build.gradle files should look similar to the examples below
+  
+Project build.gradle file.
 
-* Enable view binding and java 8 by adding the following block in the app level gradle file
+`dependencies {
+	...
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72"
+    }`
+  
+App build.gradle file  
 ```
-    android{
-        ...
-            viewBinding {
-            enabled = true
-            }
-	
-	compileOptions {
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+
+android {
+    ...
+    
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-        }
-       ...
-     }
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+	...
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+
+    implementation "androidx.core:core-ktx:1.3.1"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
+    implementation 'com.google.code.gson:gson:2.8.6'
+    
+    implementation project(':library-release')
+}
+
 ```
 
 * To show the viewer, add the following:
