@@ -14,7 +14,7 @@ implementation project(':library-release')
 	Clean Build after all the above steps.
 
 * Step 3  
-Android Studio adds Kotlin to your project classpath and applies the Kotlin and Kotlin Android Extensions plugins to each module that contains Kotlin files. Your build.gradle files should look similar to the examples below
+Add Kotlin to your project classpath and applies the Kotlin and Kotlin Android Extensions plugins to each module that contains Kotlin files. Your build.gradle files should look similar to the examples below
   
 Project build.gradle file.
 
@@ -61,7 +61,7 @@ dependencies {
 ```
 
 * To show the viewer, add the following:
-    1. In the layout file of your activity:
+    1. In the layout file of your activity/fragment:
          ```
             <FrameLayout
              android:id="@+id/container"
