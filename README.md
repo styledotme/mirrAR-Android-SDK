@@ -61,7 +61,18 @@ dependencies {
 ```
 
 * To show the viewer, add the following:
-    1. In the layout file of your activity/fragment:
+
+    1. In the Manifeast add the following
+      ```
+      <uses-permission android:name="android.permission.CAMERA"/>
+      <uses-permission android:name="android.permission.INTERNET"/>
+
+      <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+      ```
+    
+    2. In the layout file of your activity/fragment add the following
          ```
             <FrameLayout
              android:id="@+id/container"
@@ -70,7 +81,7 @@ dependencies {
              />
          ```
 
-    2. In your activity/fragment class, add the following 
+    3. In your activity/fragment class, add the following 
         
 	 ``` 
 	         JSONObject data = null;
@@ -87,6 +98,25 @@ dependencies {
                 .beginTransaction()
                 .replace(R.id.container, fragment)
                 .commit();
+		
+	* Override these two method 
+	
+	@Override
+    	public void onBackPressed() {
+        if (fragment != null && fragment.isBack()) {
+            fragment.goBack();
+        } else {
+            super.onBackPressed();
+       	 }
+   	}
+
+    	@Override
+    	protected void onStop() {
+        if (fragment != null) {
+            fragment.closePreview();
+        }
+         super.onStop();
+    	}
 
 	```
 
