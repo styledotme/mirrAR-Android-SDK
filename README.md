@@ -64,12 +64,15 @@ dependencies {
 
     1. In the Manifeast add the following
       ```
+      
       <uses-permission android:name="android.permission.CAMERA"/>
       <uses-permission android:name="android.permission.INTERNET"/>
 
       <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
+	
+	
       ```
     
     2. In the layout file of your activity/fragment add the following
