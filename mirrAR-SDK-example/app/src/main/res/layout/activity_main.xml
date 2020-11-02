@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/launchMirrar"
+        android:layout_width="wrap_content"
+        android:layout_height="?actionBarSize"
+        android:text="Launch mirrAR"
+        android:background="@color/baseColor"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/container_layout"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <FrameLayout
         android:id="@+id/container_layout"
         android:layout_width="match_parent"
