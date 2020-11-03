@@ -689,6 +689,7 @@ id async
 id blocking
 id bottom
 id buttonPanel
+id cameraError
 id cancel_action
 id checkbox
 id checked
