@@ -25,8 +25,6 @@ Project build.gradle file.
   
 App build.gradle file  
 ```
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-android'
 
 android {
     ...
@@ -36,19 +34,12 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-
 }
 
 dependencies {
 	...
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
-
-    implementation "androidx.core:core-ktx:1.3.1"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
     implementation 'com.google.code.gson:gson:2.8.6'
     
     implementation project(':library-release')
