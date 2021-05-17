@@ -3,7 +3,7 @@
 # How to import mirrAR android SDK
 
 * Step 1 
-``` File -> New -> New Module -> Import .jar/.aar and import your .aar.```
+``` File -> New -> New Module -> Import .jar/.aar and import your .aar```
 * Step 2
 ``` File -> Project structure -> Dependencies -> <All Modules> -> (Add jar dependencies by clicking on the '+' icon then select app-release)```
 * Setp 3
