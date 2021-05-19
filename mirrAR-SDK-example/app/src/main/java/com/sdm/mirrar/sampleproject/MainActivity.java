@@ -14,7 +14,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
-	MirrarFragment fragment;
+    MirrarFragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
