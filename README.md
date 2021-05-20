@@ -125,7 +125,9 @@ dependencies {
 	  `ear - Earrings`
 	  `neck - Necklaces`
 	  `set - Necklace earrings pair`      
-	  
+
+# Proguard rules
+Add rules from this file- https://github.com/styledotme/mirrAR-Android-SDK/blob/master/mirrAR-SDK-example/app/proguard-rules.pro
 		   
 # License validity along with active product codes & types supported can be determined from this API -
 curl --location --request POST 'https://mirrar.styledotme.com/api/v2/login' \
