@@ -8,7 +8,7 @@
 In your project’s build.gradle (the one under ‘app’) add the following:
 
 `dependencies {
-implementation project(':library-release')
+ implementation project(':library-release')
 }`
 
 	Clean Build after all the above steps.
