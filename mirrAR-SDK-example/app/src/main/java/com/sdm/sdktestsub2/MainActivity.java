@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.sdm.mirrar.mirrar.MirrarFragment;
+import com.sdm.mirrar.library.MirrarFragment;
+import com.sdm.mirrar.sampleproject.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        MirrarFragment fragment = new MirrarFragment(""/*login ID*/, ""/*password*/, data /*json object*/);
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.container, fragment)
-                .commit();
+//        MirrarFragment fragment = new MirrarFragment(""/*login ID*/, ""/*password*/, data /*json object*/);
+//        getSupportFragmentManager()
+//                .beginTransaction()
+//                .replace(R.id.container, fragment)
+//                .commit();
     }
 }

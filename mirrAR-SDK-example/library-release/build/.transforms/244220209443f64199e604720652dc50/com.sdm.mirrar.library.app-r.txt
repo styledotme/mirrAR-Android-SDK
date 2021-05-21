@@ -686,6 +686,7 @@ id activity_chooser_view_content
 id add
 id alertTitle
 id async
+id background
 id blocking
 id bottom
 id buttonPanel
@@ -874,6 +875,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string hello_blank_fragment
 string search_menu_title
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat
