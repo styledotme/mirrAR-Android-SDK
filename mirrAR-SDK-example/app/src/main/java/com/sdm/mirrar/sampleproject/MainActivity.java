@@ -23,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.launchMirrar).setOnClickListener(view -> {
             try {
-                JSONObject data = new JSONObject("{\"options\":{\"productData\":{\"Earrings\":{\"items\":[\"0079-500x500\",\"0097-500x500\",\"00118-500x500sdfghjk\"],\"type\":\"ear\"},\"Sets\":{\"items\":[\"DSC_0206S\",\"DSC_0204S\"],\"type\":\"set\"}}}\n" +
-                        "}");
+                JSONObject data = new JSONObject("{\"options\": {\"productData\": {\"Necklaces\": {\"items\": [\"M5\",\"M10\",\"M4\",\"M14\"],\"type\": \"neck\"}}}}");
 
-                fragment = new MirrarFragment(data, "brandID" /*,new Bitmap() (bitmap is optional)*/);
+                fragment = new MirrarFragment(data, "rajdhani-jewellers-ar", "9927");
+
 
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
@@ -48,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStop() {
+    protected void onDestroy() {
         if (fragment != null) {
             fragment.closePreview();
         }
-        super.onStop();
+        super.onDestroy();
     }
 }
