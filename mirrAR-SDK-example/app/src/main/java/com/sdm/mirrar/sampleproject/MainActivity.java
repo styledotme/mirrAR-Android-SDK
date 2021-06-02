@@ -3,7 +3,9 @@ package com.sdm.mirrar.sampleproject;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -31,6 +33,54 @@ public class MainActivity extends AppCompatActivity {
 
                 transaction.replace(R.id.container_layout, fragment).commit();
                 findViewById(R.id.launchMirrar).setVisibility(View.GONE);
+
+                fragment.setMirrarListener(new MirrarFragment.MyMirrarListener() {
+                    @Override
+                    public void onClickWhatsapp(String imageUrl) {
+                        Log.d("checkListener", "onClickWhatsapp: "+imageUrl);
+
+                    }
+
+                    @Override
+                    public void onClickShare(Bitmap image) {
+                        Log.d("checkListener", "onClickShare: "+image);
+
+                    }
+
+                    @Override
+                    public void onClickDownload(Bitmap image) {
+                        Log.d("checkListener", "onClickDownload: "+image);
+                    }
+
+                    @Override
+                    public void onClickDetails(String productCode) {
+                        Log.d("kcnknksjas", "onClickDetails: "+productCode);
+                    }
+
+                    @Override
+                    public void onClickCart(String productCode) {
+                        Log.d("checkListener", "onClickCart: "+productCode);
+
+                    }
+
+                    @Override
+                    public void onClickWhishlist(String productCode) {
+                        Log.d("checkListener", "onClickWhishlist: "+productCode);
+
+                    }
+
+                    @Override
+                    public void onClickUnWhishlist(String productCode) {
+                        Log.d("checkListener", "onClickDetails: "+productCode);
+
+                    }
+
+                    @Override
+                    public void onClickUnCart(String productCode) {
+                        Log.d("checkListener", "onClickUnCart: "+productCode);
+                    }
+                });
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }

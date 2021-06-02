@@ -126,6 +126,61 @@ dependencies {
 	  `neck - Necklaces`
 	  `set - Necklace earrings pair`      
 
+# To add delegate methods
+
+Override these methods inside your fragment
+
+fragment.setMirrarListener(new MirrarFragment.MyMirrarListener() {
+
+               ```
+                    @Override
+                    public void onClickWhatsapp(String imageUrl) {
+                        Log.d("checkListener", "onClickWhatsapp: "+imageUrl);
+
+                    }
+
+                    @Override
+                    public void onClickShare(Bitmap image) {
+                        Log.d("checkListener", "onClickShare: "+image);
+
+                    }
+
+                    @Override
+                    public void onClickDownload(Bitmap image) {
+                        Log.d("checkListener", "onClickDownload: "+image);
+                    }
+
+                    @Override
+                    public void onClickDetails(String productCode) {
+                        Log.d("kcnknksjas", "onClickDetails: "+productCode);
+                    }
+
+                    @Override
+                    public void onClickCart(String productCode) {
+                        Log.d("checkListener", "onClickCart: "+productCode);
+
+                    }
+
+                    @Override
+                    public void onClickWhishlist(String productCode) {
+                        Log.d("checkListener", "onClickWhishlist: "+productCode);
+
+                    }
+
+                    @Override
+                    public void onClickUnWhishlist(String productCode) {
+                        Log.d("checkListener", "onClickDetails: "+productCode);
+
+                    }
+
+                    @Override
+                    public void onClickUnCart(String productCode) {
+                        Log.d("checkListener", "onClickUnCart: "+productCode);
+                    }
+                });
+
+                ```
+
 # Proguard rules
 Add rules from this file- https://github.com/styledotme/mirrAR-Android-SDK/blob/master/mirrAR-SDK-example/app/proguard-rules.pro
 		   
