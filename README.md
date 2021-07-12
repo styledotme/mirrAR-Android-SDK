@@ -177,12 +177,11 @@ fragment.setMirrarListener(new MirrarFragment.MyMirrarListener() {
                     public void onClickUnCart(String productCode) {
                         Log.d("checkListener", "onClickUnCart: "+productCode);
                     }
-                    @Override
-                     public void onClickClose() {
-                     //triggers when user tap on close button if there are zero product available
-                         Log.d("checkListener", "onClickClose: " );
+                     @Override
+                    public void exceptionOccur() {
+                      Log.d("checkListener", "exception: " );
 
-                     }
+                      }
                 });
 
                 ```
