@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onClickDetails(String productCode) {
-                        Log.d("kcnknksjas", "onClickDetails: " + productCode);
+                        Log.d("checkListener", "onClickDetails: " + productCode);
                     }
 
                     @Override
@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 });
 
             } catch (JSONException e) {
+
                 e.printStackTrace();
             }
         });
