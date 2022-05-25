@@ -177,6 +177,12 @@ fragment.setMirrarListener(new MirrarFragment.MyMirrarListener() {
                     public void onClickUnCart(String productCode) {
                         Log.d("checkListener", "onClickUnCart: "+productCode);
                     }
+		    
+		     @Override
+                    public void onJewellerySelect(String productCode) {
+                        Log.d("checkListener", "onJewellerySelect: " + productCode);
+                    }
+		    
                      @Override
                     public void exceptionOccur() {
                       Log.d("checkListener", "exception: " );
