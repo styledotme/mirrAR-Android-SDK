@@ -30,9 +30,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    viewBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding true
     }
 }
 
@@ -45,12 +44,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation 'com.google.android.material:material:1.2.0-alpha01'
-    implementation 'com.google.firebase:firebase-ml-vision:24.0.1'
-    implementation 'com.google.firebase:firebase-ml-vision-face-model:19.0.0'
-
-    def camerax_version = "1.0.0-alpha05"
-    implementation "androidx.camera:camera-core:${camerax_version}"
-    implementation "androidx.camera:camera-camera2:${camerax_version}"
 
     api 'com.squareup.retrofit2:converter-gson:2.7.1'
 

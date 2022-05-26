@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.launchMirrar).setOnClickListener(view -> {
             try {
-                JSONObject data = new JSONObject("{\"options\":{\"productData\":{\"Earrings\":{\"items\":[\"1D-501757JYFABA08\"],\"type\":\"ear\"}}}\n" +
+                JSONObject data = new JSONObject("{\"options\":{\"productData\":{\"Sets\":{\"items\":[\"SET001\",\"set001\"],\"type\":\"set\"}}}\n" +
                         "}");
 
-                fragment = new MirrarFragment(data, "");
+                fragment = new MirrarFragment(data, "562e2c77-8e8d-41b1-96bc-4b431b2c3a16");
 
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
@@ -79,6 +79,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClickUnCart(String productCode) {
                         Log.d("checkListener", "onClickUnCart: " + productCode);
+                    }
+
+                    @Override
+                    public void onJewellerySelect(String productCode) {
+                        Log.d("checkListener", "onJewellerySelect: " + productCode);
                     }
 
                     @Override
