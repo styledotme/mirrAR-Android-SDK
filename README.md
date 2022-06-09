@@ -133,6 +133,12 @@ Override these methods inside your fragment
 fragment.setMirrarListener(new MirrarFragment.MyMirrarListener() {
 
                ```
+	       
+	       	    @Override
+                    public void onTakePhoto() {
+                        Log.d("checkListener", "take photo");
+                    }
+		    
                     @Override
                     public void onClickWhatsapp(String imageUrl) {
                         Log.d("checkListener", "onClickWhatsapp: "+imageUrl);
