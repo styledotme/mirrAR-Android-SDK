@@ -25,10 +25,11 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.launchMirrar).setOnClickListener(view -> {
             try {
-                JSONObject data = new JSONObject("{\"options\":{\"productData\":{\"Sets\":{\"items\":[\"SET001\",\"set001\"],\"type\":\"set\"}}}\n" +
+                JSONObject data = new JSONObject("{\"options\":{\"productData\":{\"Earrings\":{\"items\":[\"501757SPKAGA08\",\"501181HGDAGA09\"],\"type\":\"ear\"}}}\n" +
                         "}");
 
-                fragment = new MirrarFragment(data, "562e2c77-8e8d-41b1-96bc-4b431b2c3a16");
+                fragment = new MirrarFragment(data, "ffae6dac-89e4-41df-8973-e58a60efc9c4");
+
 
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
@@ -36,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
                 findViewById(R.id.launchMirrar).setVisibility(View.GONE);
 
                 fragment.setMirrarListener(new MirrarFragment.MyMirrarListener() {
+                    @Override
+                    public void onTakePhoto() {
+                        Log.d("checkListener", "onTakePhoto: ");
+                    }
+
                     @Override
                     public void onClickWhatsapp(String imageUrl) {
                         Log.d("checkListener", "onClickWhatsapp: " + imageUrl);
