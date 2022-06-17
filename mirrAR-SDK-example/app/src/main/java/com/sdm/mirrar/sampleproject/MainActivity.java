@@ -1,5 +1,6 @@
 package com.sdm.mirrar.sampleproject;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -7,9 +8,9 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 import com.sdm.mirrar.library.MirrarFragment;
+import com.sdm.mirrar.library.MyMirrarListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,18 +26,31 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.launchMirrar).setOnClickListener(view -> {
             try {
-                JSONObject data = new JSONObject("{\"options\":{\"productData\":{\"Earrings\":{\"items\":[\"501757SPKAGA08\",\"501181HGDAGA09\"],\"type\":\"ear\"}}}\n" +
-                        "}");
+                JSONObject data = new JSONObject("{\"options\":{\"productData\":{\"Pendants\":{\"items\":[\"PENDENT24\"],\"type\":\"neck\"}}}}");
 
-                fragment = new MirrarFragment(data, "ffae6dac-89e4-41df-8973-e58a60efc9c4");
-
+                fragment = new MirrarFragment(data, "116f058c-5be4-4206-9c5f-e568568544b2");
 
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
                 transaction.replace(R.id.container_layout, fragment).commit();
                 findViewById(R.id.launchMirrar).setVisibility(View.GONE);
 
-                fragment.setMirrarListener(new MirrarFragment.MyMirrarListener() {
+                fragment.setMirrarListener(new MyMirrarListener() {
+                    @Override
+                    public void onSubmitReview() {
+                        Log.d("checkListener", "onSubmitReview: ");
+                    }
+
+                    @Override
+                    public void onSdkLoaded() {
+                        Log.d("checkListener", "onSdkLoaded: ");
+                    }
+
+                    @Override
+                    public void onBackPressed() {
+                        Log.d("checkListener", "onBackPressed: ");
+                    }
+
                     @Override
                     public void onTakePhoto() {
                         Log.d("checkListener", "onTakePhoto: ");
@@ -100,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
                 });
 
             } catch (JSONException e) {
-
                 e.printStackTrace();
             }
         });
