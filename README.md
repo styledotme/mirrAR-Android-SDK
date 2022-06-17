@@ -130,70 +130,85 @@ dependencies {
 
 Override these methods inside your fragment
 
-fragment.setMirrarListener(new MirrarFragment.MyMirrarListener() {
 
                ```
-	       
-	       	    @Override
-                    public void onTakePhoto() {
-                        Log.d("checkListener", "take photo");
+	       fragment.setMirrarListener(new MirrarFragment.MyMirrarListener() {
+
+                    @Override
+                    public void onSubmitReview() {
+                        Log.d("checkListener", "onSubmitReview: ");
                     }
-		    
+
+                    @Override
+                    public void onSdkLoaded() {
+                        Log.d("checkListener", "onSdkLoaded: ");
+                    }
+
+                    @Override
+                    public void onBackPressed() {
+                        Log.d("checkListener", "onBackPressed: ");
+                    }
+
+                    @Override
+                    public void onTakePhoto() {
+                        Log.d("checkListener", "onTakePhoto: ");
+                    }
+
                     @Override
                     public void onClickWhatsapp(String imageUrl) {
-                        Log.d("checkListener", "onClickWhatsapp: "+imageUrl);
+                        Log.d("checkListener", "onClickWhatsapp: " + imageUrl);
 
                     }
 
                     @Override
                     public void onClickShare(Bitmap image) {
-                        Log.d("checkListener", "onClickShare: "+image);
+                        Log.d("checkListener", "onClickShare: " + image);
 
                     }
 
                     @Override
                     public void onClickDownload(Bitmap image) {
-                        Log.d("checkListener", "onClickDownload: "+image);
+                        Log.d("checkListener", "onClickDownload: " + image);
                     }
 
                     @Override
                     public void onClickDetails(String productCode) {
-                        Log.d("kcnknksjas", "onClickDetails: "+productCode);
+                        Log.d("checkListener", "onClickDetails: " + productCode);
                     }
 
                     @Override
                     public void onClickCart(String productCode) {
-                        Log.d("checkListener", "onClickCart: "+productCode);
+                        Log.d("checkListener", "onClickCart: " + productCode);
 
                     }
 
                     @Override
                     public void onClickWhishlist(String productCode) {
-                        Log.d("checkListener", "onClickWhishlist: "+productCode);
+                        Log.d("checkListener", "onClickWhishlist: " + productCode);
 
                     }
 
                     @Override
                     public void onClickUnWhishlist(String productCode) {
-                        Log.d("checkListener", "onClickDetails: "+productCode);
+                        Log.d("checkListener", "onClickDetails: " + productCode);
 
                     }
 
                     @Override
                     public void onClickUnCart(String productCode) {
-                        Log.d("checkListener", "onClickUnCart: "+productCode);
+                        Log.d("checkListener", "onClickUnCart: " + productCode);
                     }
-		    
-		     @Override
+
+                    @Override
                     public void onJewellerySelect(String productCode) {
                         Log.d("checkListener", "onJewellerySelect: " + productCode);
                     }
-		    
-                     @Override
-                    public void exceptionOccur() {
-                      Log.d("checkListener", "exception: " );
 
-                      }
+                    @Override
+                    public void exceptionOccur() {
+                        Log.d("checkListener", "exception: " );
+
+                    }
                 });
 
                 ```
