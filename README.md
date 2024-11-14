@@ -93,6 +93,9 @@ dependencies {
 # Note: enable camera permission before initializing the fragment
 
         MirrarFragment fragment = new MirrarFragment(data, "brandID" /*,new Bitmap() (bitmap is optional)*/);
+	# Optional: If you want to try a specific product pass a SKU for the product as a third separate constructor parameter
+	// fragment = new MirrarFragment(data, "brandId", "sku-code");
+
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.container, fragment)
